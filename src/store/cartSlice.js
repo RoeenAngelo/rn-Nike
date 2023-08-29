@@ -12,20 +12,19 @@ export const cartSlice = createSlice({
   reducers: {
     addCartItem: (state, action) => {
       const newProduct = action.payload.product //We can find the payload property by console.log(action)
-      const cartItem = state.items.find((i) => i.product._id === newProduct._id)
-      
+      const cartItem = state.items.find(
+        (item) => item.product.id === newProduct.id
+      );
       if (cartItem) {
         cartItem.quantity += 1
+      console.log(newProduct) 
+
       } 
       else {
         state.items.push({ product: newProduct, quantity: 1 })
-      } 
+      console.log(newProduct) 
 
-
-      
-      console.log('items', state.items)
-      // console.log('action', action)
-      // console.log('state', state)
+      }
     },
     changeQuantity: (state, action) => {
 

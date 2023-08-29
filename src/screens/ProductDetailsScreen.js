@@ -13,7 +13,7 @@ const ProductDetailsScreen = () => {
   const { title, price, description, infoContainer, button, buttonText } = styles
 
   function addToCart() {
-    dispatch(cartSlice.actions.addCartItem({ product: product}))    
+    dispatch(cartSlice.actions.addCartItem({ product }))    
     alert('Added to cart')  
   }
   return (
