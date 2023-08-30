@@ -30,11 +30,12 @@ const ShoppingCartTotals = () => {
 };
 
 const ShoppingCart = () => {
-
   // Styles
   const {  button, buttonText } = styles
 
   const dispatch = useDispatch();
+
+  // Use Data from the cart state
   const cartItems = useSelector((state) => state.cart.items);
   
   function onCheckout() {
@@ -47,7 +48,7 @@ const ShoppingCart = () => {
         data={cartItems}
         renderItem={({ item }) =>
           <CartListItem 
-            cartItem={item}
+            cartItem={item} //Use cartItem as a prop
           />
         }
         ListFooterComponent={ShoppingCartTotals}
