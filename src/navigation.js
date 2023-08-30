@@ -8,7 +8,7 @@ import ProductsScreen from './screens/ProductsScreen';
 import ProductDetailsScreen from './screens/ProductDetailsScreen';
 import ShoppingCart from './screens/ShoppingCart';
 import { useSelector } from 'react-redux';
-import { selectNumberOfItems } from './store/cartSlice';
+import { selectCartQuantity } from './store/cartSlice';
 
 
 
@@ -16,7 +16,7 @@ const Stack = createNativeStackNavigator();
 
 const Navigation = () => {
   
-  const numberOfItemsInCart = useSelector(selectNumberOfItems)
+  const numberOfItemsInCart = useSelector(selectCartQuantity)
 
   return (
     <NavigationContainer>
